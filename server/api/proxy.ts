@@ -1,11 +1,11 @@
 // server/api/proxy.ts
 export default defineEventHandler(async (event) => {
   try {
-    const TOKEN = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InRlc3QiLCJzdWIiOjEsImlhdCI6MTcwOTYyNDA1MSwiZXhwIjozMzI0NTYyNDA1MX0.01BroMNk9JXcaluf4IJ1HuZeCfDGAmxB5lgjhTFUOqE'
+    const apiUrl = process.env.API_URL + '/product/all';
 
-    const response = await fetch('http://wallserver.dyndns.info:10000/product/all', {
+    const response = await fetch(apiUrl, {
       headers: {
-        Authorization: `Bearer ${TOKEN}`,
+        Authorization: `Bearer ${process.env.TOKEN}`,
       },
     });
 
