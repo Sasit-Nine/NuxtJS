@@ -7,7 +7,7 @@ const useFetchProducts = () => {
 
   const fetchProducts = async () => {
     try {
-      const response = await fetch('/api/proxy');
+      const response = await fetch('/server/api/proxy');
       if (response.ok) {
         products.value = await response.json();
       } 
