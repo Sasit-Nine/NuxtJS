@@ -4,6 +4,12 @@ export default defineNuxtConfig({
   buildModules: ['@nuxtjs/dotenv'],
   modules: ["@nuxtjs/tailwindcss"],
   serverMiddleware: ['~/server/api/proxy.ts'],
+  proxy: {
+    '/api': {
+      target: 'http://wallserver.dyndns.info:10000/product/all', // Your NestJS backend URL
+      pathRewrite: { '^/api': '' }
+    }
+  },
   runtimeConfig: {
     public: {
       API_URL: process.env.API_URL,
