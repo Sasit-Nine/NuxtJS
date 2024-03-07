@@ -1,4 +1,4 @@
-// C:\Users\sasit\Documents\GitHub\research-nuxtjs\composables\FetchStore.ts
+// composables/FetchStore.ts
 import { ref, onMounted } from 'vue';
 
 const useFetchProducts = () => {
